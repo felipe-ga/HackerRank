@@ -18,10 +18,7 @@ public class Day1DataTypes {
         int i = 4;
         float d = 4.0f;
         String s = "HackerRank ";
-        
-        
-        
-        
+
         iEntero = 12;
         dDecimal = 4.0f;
         sString = "is the best place to learn and practice coding!";
