@@ -12,7 +12,6 @@ package com.interview;
 public class LefRotation {
      public static void main(String[] args) {
          int[] array = {1,2,3,4,5};
-         int[] array2 = new int[array.length];
          int noRotation = 2;
          for(int i = 0;i < noRotation;i++){
              int temp = array[0];
