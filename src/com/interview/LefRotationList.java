@@ -26,7 +26,6 @@ public class LefRotationList {
              int temp = array.get(0);
              array.remove(0);
              array.add(dimension - 1, temp);
-              
          }
          
          for(Integer i : array){
