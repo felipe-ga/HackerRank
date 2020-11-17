@@ -17,35 +17,54 @@ import static jdk.nashorn.internal.objects.NativeArray.map;
 public class NewYearChaos {
     static void minimumBribes(int[] q) {
         int countBribed = 0;
-        int numfounded = 0;
-        int countCoutic = q[q.length-1];
         for(int i = q.length-1;i > 0;i--){
             
-            if(numfounded == q[i]){
-                countCoutic++; 
-            }
-            
-            if(countCoutic > 2){
-                System.out.print("Too chaotic");
+            //System.out.println("q[i] "+q[i]);
+            //System.out.println("j "+(i+2));
+            /*if (q[i] != (i+1)) {
+                int swap = q[i-1];
+                q[i] = q[i-1];
+                q[i-1] = swap;
+                countBribed++;
+            }else if(q[i] == (i + 2)){
+                System.out.println("Too chaotic");
                 return;
             }
-            
-            if (q[i] != i+1) {
-                int swap = q[i];
-                q[i-1] = q[i];
-                q[i] = swap;
-                numfounded = q[i];
-                countCoutic++; 
-                countBribed++;
-            } 
+            for(int d = 0; d < q.length;d++){
+                System.out.print(q[d] + " ");
+            }*/
+            System.out.println();
         }   
         System.out.println(countBribed);
     }
+    /*
+    static void minimumBribes(int[] q) {
+        int countBribed = 0;
+        for(int i = q.length-1;i > 0;i--){
+            int num = i+3;
+            System.out.println("q[i] "+q[i]);
+            System.out.println("j "+(i+2));
+            if (q[i] != (i+1)) {
+                int swap = q[i-1];
+                q[i] = q[i-1];
+                q[i-1] = swap;
+                countBribed++;
+            }else if(q[i] == (i + 2)){
+                System.out.println("Too chaotic");
+                return;
+            }
+            for(int d = 0; d < q.length;d++){
+                System.out.print(q[d] + " ");
+            }
+            System.out.println();
+        }   
+        System.out.println(countBribed);
+    }*/
     public static void main(String[] args) {
         int t = 1;
         for (int tItr = 0; tItr < t; tItr++) {
-            int[] qItems = {2,1,5,3,4};
-            //int[] qItems = {2,5,1,3,4};
+            //int[] qItems = {2,1,5,3,4};
+            int[] qItems = {2,5,1,3,4};
             minimumBribes(qItems);
         }
     }
