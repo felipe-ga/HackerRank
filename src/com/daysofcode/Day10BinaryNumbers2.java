@@ -5,37 +5,31 @@
  */
 package com.daysofcode;
 
+import java.util.Stack;
+
 /**
  *
- * @author AN-N
+ * @author anonimo
  */
-public class Day10BinaryNumbers {
+public class Day10BinaryNumbers2 {
     private static final int BASE_TWO = 2;
-    public static String reverseString(String string){
-        String salida = "";
-        for(int i = string.length()-1; i >= 0;i--){
-            salida += string.charAt(i);
-        }
-        return salida;
-    }
-
-    public static String converToBinary(int number){
+    public static Stack converToBinary(int number){
         int numberLocal = number;
-        String salida = "";
+        Stack stack = new Stack();
         while(numberLocal > 0){
             int residuo = numberLocal % BASE_TWO;
-            int div = numberLocal / BASE_TWO;
-            salida += residuo;
-            numberLocal = div;
+            numberLocal = numberLocal / BASE_TWO;
+            stack.push(new Integer(residuo));
         }
-        return reverseString(salida);
+        return stack;
     }
     
-    public static void binaryNumber(String number){
+    public static void binaryNumber(Stack stack){
         int count = 0;
         int maxCount = 0;
-        for(int i = 0;i <= number.length()-1; i ++){
-            if(number.charAt(i) == '1'){
+        while(!stack.empty()){
+            int num = (Integer) stack.pop();
+            if(num == 1){
                 count++;
             }else{
                 if(count > maxCount){
@@ -49,9 +43,9 @@ public class Day10BinaryNumbers {
         }
         System.out.println(maxCount);
     }
-    
     public static void main(String[] args) {
-        String result = converToBinary(439);
-        binaryNumber(result);
+        Stack stack = converToBinary(439);
+        binaryNumber(stack);
+        
     }
 }
