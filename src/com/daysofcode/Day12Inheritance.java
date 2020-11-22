@@ -5,6 +5,8 @@
  */
 package com.daysofcode;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+
 class Person {
 	protected String firstName;
 	protected String lastName;
@@ -42,18 +44,21 @@ class Student extends Person{
         super(firstName,lastName,id);
         testScores = scores;
     }
+    public int suma(){
+        int suma = 0;
+        for(int i : testScores){
+            suma += i;
+        }
+        return suma;
+    }
     /*	
     *   Method Name: calculate
     *   @return A character denoting the grade.
     */
     // Write your method here
     public char calculate(){
-        int sum = 0;
-        for(int i : testScores){
-            sum += i;
-        }
-        int div = sum / testScores.length;
-        System.out.println(div);
+        int suma = suma();
+        int div = suma / testScores.length;
         if(div >= 40 && div < 55){
             return 'D';
         }else if(div >= 55 && div < 70){
