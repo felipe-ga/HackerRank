@@ -5,6 +5,8 @@
  */
 package com.daysofcode;
 
+import java.util.function.BinaryOperator;
+
 /**
  *
  * @author anonimo
@@ -18,15 +20,15 @@ public class Difference {
         this.elements = elements;
     }
     public void computeDifference(){
-        maximumDifference = Math.abs(elements[0] - elements[1]); 
+        BinaryOperator<Integer> diffAbsolute = (x,y) -> Math.abs(x-y);
+        maximumDifference = diffAbsolute.apply(elements[0],elements[1]); 
         for(int i = 0;i < elements.length;i++){
             for(int j = i + 1;j < elements.length;j++){
-                int difference = Math.abs(elements[i] - elements[j]);
+                int difference = diffAbsolute.apply(elements[i],elements[j]);
                 if(difference > maximumDifference){
                     maximumDifference = difference;
                 }    
             }
-            
         }
     }
 }
