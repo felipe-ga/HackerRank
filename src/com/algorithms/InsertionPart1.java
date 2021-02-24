@@ -21,29 +21,6 @@ public class InsertionPart1 {
         }
         System.out.println();
     }
-//    static void insertionSort1(int n, int[] arr) {
-//        int k=arr[arr.length-1];
-//        boolean flag=false;
-//        for(int i=arr.length-2;i>=0;i--){
-//            if(arr[i]>k){
-//                arr[i+1]=arr[i];
-//            }else{
-//                arr[i+1]=k;
-//                flag=true;
-//                break;
-//            }
-//            for(int j=0;j<n;j++){
-//                System.out.print(arr[j]+" ");
-//            }
-//            System.out.println();
-//        }
-//        if(flag==false){
-//            arr[0]=k;
-//        }
-//        for(int j=0;j<n;j++){
-//                System.out.print(arr[j]+" ");
-//            }
-//    }
     static void insertionSort1(int n, int[] arr) {
         int[] array = arr;
         int number = array[n-1]; 
