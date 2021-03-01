@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.exercises.strings;
 
 /**
- *
+ * Function that reverses the given string.
  * @author Felipe Galindo
  */
-/*
-Build a function that reverses the given string.
-example 
-Given "Hello world", that function should return "dlrow olleH"
-*/
 public class ReverseString {
     public static String reverse(String statement){
         StringBuilder result = new StringBuilder();

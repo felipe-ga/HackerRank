@@ -8,17 +8,9 @@ package com.exercises.strings;
 import java.util.regex.Pattern;
 
 /**
- *
+ * Function that, given a string, sum all the digits that appear in the string
  * @author Felipe Galindo
  */
-/*
-    Build a function that, given a string, sum all the digits that appear in the string
-    */
-    /*
-    Example:
-    given "I turn 41 in 9 months", the function should return "50"
-    given "Hello word", the function should return 0
-    */
 public class SumDigits {
     public static int sumAllDigitsOfAString(String statement){
         int sum = 0;
