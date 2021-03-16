@@ -10,6 +10,40 @@ public class LinkedList {
         return this.head;
     }
 
+    public void addElementSorted(int data){
+        if(head == null){
+            return;
+        }
+        if(data < head.getData()){
+            Node tmp = head;
+            head = new Node(data);
+            tmp.setPrev(head);
+            head.setNext(tmp);
+            return;
+        }
+        Node current = head;
+        Node newNode = new Node(data);
+        while(current.getNext() != null){
+            if(newNode.getData() < current.getData()){
+                swap(newNode,current);
+                return;
+            }
+            current = current.getNext();
+        }
+        if(newNode.getData() < current.getData()){
+            swap(newNode,current);
+        }else{
+            newNode.setPrev(current);
+            current.setNext(newNode);
+        }
+    }
+    public static void swap(Node newNode,Node current){
+        Node tmp = current.getPrev();
+        current.setPrev(newNode);
+        tmp.setNext(newNode);
+        newNode.setNext(current);
+        newNode.setPrev(tmp);
+    }
     public void addElementToEnd(int data){
         if(head == null){
             head = new Node(data);
