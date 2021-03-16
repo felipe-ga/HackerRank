@@ -3,6 +3,23 @@ package com.interview.likedlist;
 public class LinkedList {
     private Node head;
 
+    public Node reverse(){
+        if(head == null){
+            return null;
+        }
+        Node current = head;
+        Node prev = null;
+        Node next = null;
+        while (current != null){
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+
     public void setHead(Node head){
         this.head = head;
     }
@@ -85,7 +102,12 @@ public class LinkedList {
         }
     }
 
-    public void printElements(){
+    public void printElements(Node h){
+
+        if(h != null){
+            this.head = h;
+        }
+
         if(this.head == null){
             return;
         }

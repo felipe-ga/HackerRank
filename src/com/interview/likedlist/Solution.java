@@ -22,6 +22,8 @@ public class Solution {
 
         */
         LinkedList linkedList = new LinkedList();
+        /*
+
         Node node1 = new Node(1);
         Node node2 = new Node(3);
         node2.setPrev(node1);
@@ -35,7 +37,13 @@ public class Solution {
         node4.setPrev(node3);
         linkedList.printElements();
         linkedList.addElementSorted(5);
-        linkedList.printElements();
+        linkedList.printElements();*/
+        linkedList.addElementToEnd(1);
+        linkedList.addElementToEnd(2);
+        linkedList.addElementToEnd(3);
+        linkedList.addElementToEnd(4);
+        linkedList.printElements(null);
+        linkedList.printElements(linkedList.reverse());
 
     }
 }
