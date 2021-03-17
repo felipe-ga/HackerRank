@@ -1,8 +1,25 @@
 package com.interview.likedlist;
 
+import java.util.HashMap;
+
 public class LinkedList {
     private Node head;
 
+    public boolean hasCycle(){
+        if(head == null){
+            return false;
+        }
+        HashMap<Node, Integer> nodes = new HashMap<Node, Integer>();
+        Node current = head;
+        while(current != null){
+            if(nodes.containsKey(current)){
+                return true;
+            }
+            nodes.put(current,1);
+            current = current.getNext();
+        }
+        return false;
+    }
     public Node reverse(){
         if(head == null){
             return null;
@@ -103,7 +120,6 @@ public class LinkedList {
     }
 
     public void printElements(Node h){
-
         if(h != null){
             this.head = h;
         }
